@@ -9,7 +9,8 @@
 #t{
 float:left;
 width:20%;
-mergin:50px;
+margin:1%;
+
 
 	
 }
@@ -26,7 +27,7 @@ width:20;
 
 
 </head>
-<body>
+<body >
 
 <div class="container">
   <div class="jumbotron">
