@@ -28,7 +28,7 @@ $LoginPassword="";
 
   <?php echo "$row[st_age]"."<hr>"?>
   <?php echo "$row[st_class]"."<hr>"?>
-
+<a href="stdelete.php?st_id=<?php print $row["st_id"]?>"><input type="submit" value="delete " /></a><hr />
 
   <?php
 	;}
