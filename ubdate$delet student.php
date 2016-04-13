@@ -1,9 +1,9 @@
 
-
+ <a href="index.php">INDEX </a>&nbsp;
 
 <?php
 $HostName="localhost";
-$db_name="itidb";
+$db_name="schooldb";
 $LoginName="root";
 $LoginPassword="";
 
@@ -14,7 +14,7 @@ $LoginPassword="";
 	if (!$con){die('Could not connect: ' . mysql_error());}
   	mysql_select_db($db_name , $con);
 		mysql_query("set names 'utf8';");
-	$sql = "SELECT * FROM player" ;
+	$sql = "SELECT * FROM student" ;
 	
 	$result = mysql_query($sql,$con) ;
 	?>
@@ -23,21 +23,19 @@ $LoginPassword="";
 	while($row = mysql_fetch_array($result)){
 	?>
 
-
-  الاسم <?php echo "$row[pla_name]"."   "?>
-
-
-
- النوع <?php echo "$row[pla_gender]"."<hr>"?>
- المدينة <?php echo "$row[pla_city]"."<hr>"?>
+  <form name="myform" method="post" action="updatestudent.php">
+  <input type="hidden" name="s_id" value="<?php echo "$row[st_id]"?>"/>
 
 
+
+ <input type="text" name="s_name" value="<?php echo "$row[st_name]"?>"/>
+  <input type="text" name="s_age" value="<?php echo "$row[st_age]"?>"/>
+ <input type="text" name="s_class" value="<?php echo "$row[st_class]"?>"/>
+</form>
   <?php
 	;}
 	 mysql_close($con);
 	?>
 	
-    <a href="index.php">index </a>&nbsp;
-  <a href="userregister.php">userregiste </a>&nbsp;
-  <a href="players.php"> playeres</a>&nbsp;
- <a href="playregister.php">playregister</a>
+    <a href="index.php">INDEX </a>&nbsp;
+     
